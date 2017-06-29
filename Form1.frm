@@ -8,7 +8,7 @@ Begin VB.Form Form1
    ClientTop       =   435
    ClientWidth     =   12120
    BeginProperty Font 
-      Name            =   "宋体"
+      Name            =   "Arial"
       Size            =   14.25
       Charset         =   0
       Weight          =   700
@@ -334,7 +334,7 @@ Begin VB.Form Form1
          End
          Begin VB.TextBox Text4 
             BeginProperty Font 
-               Name            =   "宋体"
+               Name            =   "Arial"
                Size            =   10.5
                Charset         =   0
                Weight          =   400
@@ -351,7 +351,7 @@ Begin VB.Form Form1
          End
          Begin VB.TextBox Text3 
             BeginProperty Font 
-               Name            =   "宋体"
+               Name            =   "Arial"
                Size            =   10.5
                Charset         =   0
                Weight          =   400
@@ -709,9 +709,9 @@ Begin VB.Form Form1
       Width           =   2895
       Begin VB.ComboBox Combo12 
          BeginProperty Font 
-            Name            =   "宋体"
+            Name            =   "Arial"
             Size            =   10.5
-            Charset         =   134
+            Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
@@ -728,9 +728,9 @@ Begin VB.Form Form1
       End
       Begin VB.TextBox Text1 
          BeginProperty Font 
-            Name            =   "宋体"
+            Name            =   "Arial"
             Size            =   10.5
-            Charset         =   134
+            Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
@@ -874,9 +874,9 @@ Begin VB.Form Form1
       Width           =   2895
       Begin VB.ComboBox Combo4 
          BeginProperty Font 
-            Name            =   "宋体"
+            Name            =   "Arial"
             Size            =   10.5
-            Charset         =   134
+            Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
@@ -923,9 +923,9 @@ Begin VB.Form Form1
       End
       Begin VB.ComboBox Combo2 
          BeginProperty Font 
-            Name            =   "宋体"
+            Name            =   "Arial"
             Size            =   10.5
-            Charset         =   134
+            Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
@@ -943,9 +943,9 @@ Begin VB.Form Form1
       Begin VB.ComboBox Combo1 
          BackColor       =   &H00FFFFFF&
          BeginProperty Font 
-            Name            =   "宋体"
+            Name            =   "Arial"
             Size            =   10.5
-            Charset         =   134
+            Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
@@ -1719,7 +1719,7 @@ Private Sub Form_Load()
         Combo4.AddItem I, I
     Next
 
-    Combo1.ListIndex = 0
+    Combo1.ListIndex = 2
     Combo2.ListIndex = 4
     Combo3.ListIndex = 0
     Combo4.ListIndex = 0
@@ -1799,6 +1799,13 @@ Private Sub Form_Load()
     
     Text2.Enabled = False
     Text2.BackColor = &HFFC0C0
+    
+    ''sviera
+    isButton1_Click
+    isButton14_Click
+    
+    ''Me.Visible = False
+    
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
@@ -2063,7 +2070,7 @@ Private Sub isButton14_Click()
                     End If
                      tempstr = tempstr + " "
                 Next j
-                   tempstr = tempstr + "!"
+                   tempstr = tempstr + "! ><"
                    Display (tempstr)
                    tempstr = "     "
              Next I
@@ -2796,7 +2803,10 @@ Private Sub Timer4_Timer()
 ''                End If
 ''            End If
         Next
-          Display (tempstr + "!")
+          Display (tempstr + "! >>>")
+          ''sviera
+          SendKeys tempstr
+          ''fin sviera
           tempstr = "     "
      Next
      Text2.Text = flagTag - 1
